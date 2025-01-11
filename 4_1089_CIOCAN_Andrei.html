@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="stylesheet" type="text/css" href="4_1089_CIOCAN_Andrei.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <header id="header">
+        <h1 id="projectTitle">Photo Editor</h1>
+   </header>
+
+   <main id="mainContainer">
+        <section id="editContainer">
+            <div id="uploadContainer">
+                <p class="sectionTitle">Select a photo for editing:</p>
+                <input type="file" id="imageInput" name="imageInput" accept="image/*" multiple="false">
+                <label for="imageInput" id="customFileInput">Choose a file</label>
+            </div>
+            
+            <div class="settingsContainer" id="selectionContainer" hidden>
+                <p class="sectionTitle">Edit Tools</p>
+                <button id="btnSelectAll">Select all</button>
+                <button id="btnDeleteSelection">Delete selection</button>
+                <button id="btnCrop">Crop</button>
+                <button id="btnRestore">Restore image</button>
+                <a id="linkDownload" href="" download="edited_image">
+                    <button id="btnDownload" hidden>Download image</button>
+                </a>
+            </div>
+            <div class="settingsContainer" id="effectContainer" hidden>
+                <p class="sectionTitle">Add an effect on your selection</p>
+                <button id="btnMonochrome">Monochrome</button>
+            </div>
+            <div class="settingsContainer" id="textContainer" hidden>
+                <p class="sectionTitle">Add text</p>
+                <p id="textSectionText">
+                    Text: <input type="text" id="inputText" placeholder="Enter text here"><br><br>
+
+                    Size: <input type="number" id="textSize" value="20" min="5" max="200"><br><br>
+    
+                    Color: <input type="color" id="textColor" value="#000000"><br><br>
+    
+                    Position X axes: <input type="number" id="textX" value="100" min="0"><br><br>
+
+                    Position Y axes: <input type="number" id="textY" value="100" min="0"><br><br>
+                </p>
+                <button id="btnAddText">Add Text</button>
+            </div>
+            <div class="settingsContainer" id="scaleContainer" hidden>
+                <p class="sectionTitle">Scale image</p>
+                <p id="currentDimension"></p>
+                <p id="scaleSectionText">
+                    New height: <input id="heightScaling" type="number"><br>
+                    New width:  <input id="widthScaling" type="number"><br>
+                </p>
+                <button id="btnScale">Scale</button>
+            </div>
+        </section>
+
+        <section id="canvasContainer" hidden>
+            <canvas id="canvas"></canvas>
+        </section>
+    </main>
+
+    <script src="4_1089_CIOCAN_Andrei.js"></script>
+</body>
+
+</html> 

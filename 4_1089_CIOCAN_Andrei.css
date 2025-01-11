@@ -1,0 +1,215 @@
+
+body {
+    background-color: #3caf83;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+
+#header {
+    background-color: #2f8f6a;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #45a049;
+}
+
+#projectTitle {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+#author {
+    font-size: 1rem;
+    margin: 5px 0 0;
+    color: #d0f7e5;
+    font-weight: 400;
+}
+
+
+#mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+#editContainer {
+    background: linear-gradient(145deg, #2f8f6a, #3caf83);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    width: 320px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#customFileInput {
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #45a049;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#customFileInput:hover {
+    background-color: #3caf83;
+    transform: scale(1.03);
+}
+
+#customFileInput:active {
+    background-color: #2f8f6a;
+    transform: scale(1);
+}
+
+
+.sectionTitle {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+
+#canvasContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f8f6a;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 750px;
+    max-height: 750px;
+    margin-top: 20px;
+}
+
+#canvasContainer[hidden] {
+    display: none;
+}
+
+
+canvas {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#textSectionText input{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#scaleSectionText {
+    display: flex;
+    flex-direction: column;
+}
+
+#scaleSectionText input {
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #3caf83;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #2f8f6a;
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+
+#currentDimension {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #d0f7e5;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+#linkDownload {
+    text-decoration: none;
+    display: inline-block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    #editContainer {
+        width: 100%;
+    }
+
+    #mainContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    canvas {
+        max-height: 300px;
+    }
+}
